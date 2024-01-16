@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaInstagram, FaWhatsapp, FaTwitter, FaFacebook } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -41,12 +42,25 @@ const Footer = () => {
         {/* Right Section - Copyright, Contact Info, and Social Handles */}
         <div className="w-full md:w-1/2 lg:w-1/3 bg-white dark:bg-green-500 p-8 flex items-center justify-center">
           <div className="text-white">
-            
             <p className="text-center text-xl font-semibold mb-4">Email: info@example.com</p>
             <p className="text-center text-xl font-semibold mb-4">Contact: +01 234 567 89</p>
             <p className="text-center text-2xl font-semibold mb-4">© 2024 Your Company</p>
-            {/* Add your social icons here */}
-            {/* ... */}
+            
+            {/* Social handles with react-icons */}
+            <div className="flex justify-center space-x-4 mt-4">
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <FaInstagram size={32} color="#fff" />
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <FaWhatsapp size={32} color="#fff" />
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <FaTwitter size={32} color="#fff" />
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <FaFacebook size={32} color="#fff" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

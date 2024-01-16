@@ -93,7 +93,6 @@ function Home() {
           <span><img src={right} alt='next' /></span>
         </button>
       </div>
-     
     </>
   );
 }
