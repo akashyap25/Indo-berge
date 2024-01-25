@@ -30,7 +30,7 @@ const Product = React.memo(({ product }) => {
               src={product.image}
               alt={product.name}
               className="w-full h-72 object-cover mb-4 rounded-md transition duration-300 transform hover:scale-105"
-              loading="lazy"
+              
             />
             <div className="absolute inset-0 flex items-center justify-center text-white hover:text-orange-500 transition duration-300 text-3xl font-semibold bg-gradient-to-t from-black to-transparent p-2">
               {product.name}
