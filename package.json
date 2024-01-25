@@ -2,7 +2,7 @@
   "name": "restaurant",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "source": "public/index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
