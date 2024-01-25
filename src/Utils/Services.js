@@ -1,14 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-const Services = () => {
-  const Product = ({ name, image }) => (
-    <div className="m-4 p-4 border border-gray-300 rounded-md shadow-md transition-transform transform hover:scale-105 text-center">
-      <img src={image} alt={name} className="w-40 h-40 object-cover mb-4 rounded-md mx-auto" />
-      <div className="text-center">
-        <h3 className="text-xl font-bold mb-2">{name}</h3>
-      </div>
+const Shimmer = () => (
+  <div className="animate-pulse bg-gray-300 h-40 w-40 mb-4 rounded-md mx-auto"></div>
+);
+
+const LazyImage = ({ src, alt }) => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const image = new Image();
+    image.src = src;
+    image.onload = () => setLoading(false);
+  }, [src]);
+
+  return loading ? <Shimmer /> : <img src={src} alt={alt} className="w-40 h-40 object-cover mb-4 rounded-md mx-auto" loading="lazy" />;
+};
+
+const Product = ({ name, image }) => (
+  <div className="m-4 p-4 border border-gray-300 rounded-md shadow-md transition-transform transform hover:scale-105 text-center">
+    <LazyImage src={image} alt={name} />
+    <div className="text-center">
+      <h3 className="text-xl font-bold mb-2">{name}</h3>
     </div>
-  );
+  </div>
+);
+const Services = () => {
+ 
 
   const categories = [
     {
