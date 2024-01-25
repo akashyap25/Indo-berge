@@ -2,8 +2,8 @@ import React from 'react';
 
 const Food_Beverage = () => {
     const Product = ({ name, image }) => (
-      <div className="m-4 p-4 border border-gray-300 rounded-md shadow-md transition-transform transform hover:scale-105">
-        <img src={image} alt={name} className="w-40 h-40 object-cover mb-4 rounded-md" />
+      <div className="m-4 p-4 border border-gray-300 rounded-md shadow-md transition-transform transform hover:scale-105 text-center">
+        <img src={image} alt={name} className="w-40 h-40 object-cover mb-4 rounded-md mx-auto" />
         <div className="text-center">
           <h3 className="text-xl font-bold mb-2">{name}</h3>
         </div>
@@ -14,107 +14,105 @@ const Food_Beverage = () => {
     {
       category: 'Rice',
       products: [
-        { id: 1, name: '1121 Indian Basmati Rice', image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.indiamart.com%2Fproddetail%2F1122-steamed-basmati-rice-2851032883291.html&psig=AOvVaw3EqQAmZ-Eo_eGbxYfB7PaZ&ust=1704611142054000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCKC2wMSZyIMDFQAAAAAdAAAAABAI' },
-        { id: 2, name: '1509 Indian Basmati Rice', image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tradeindia.com%2Fproducts%2Fpure-and-dried-commonly-cultivated-long-grain-1509-basmati-rice-8190446.html&psig=AOvVaw3DqJZVX-aZ84I2XAWwq7VA&ust=1704611778005000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCPjjnvSbyIMDFQAAAAAdAAAAABAD' },
-        { id: 3, name: 'Pusa Indian Basmati Rice', image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fm.indiamart.com%2Fproddetail%2Fpusa-basmati-rice-16778312855.html%3Fpos%3D4%26pla%3Dn&psig=AOvVaw0L1S3GZvVA6gcvXlq4dxYy&ust=1704611935637000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCOiwq8CcyIMDFQAAAAAdAAAAABAD' },
-        { id: 4, name: 'Sugendha Indian Basmati Rice', image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.exportersindia.com%2Fproduct-detail%2Fcreamy-sugandha-basmati-rice-5876077.htm&psig=AOvVaw20UR9uBjTmwGmGpWjjjnj3&ust=1704611971435000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCMCOxd2cyIMDFQAAAAAdAAAAABAI' },
-        { id: 5, name: 'Permal Rice', image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.indiamart.com%2Fproddetail%2Findian-permal-rice-1458074588.html&psig=AOvVaw1Fpo2BZgaQ8pcUhlS2Vkyk&ust=1704612059704000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCOixpoedyIMDFQAAAAAdAAAAABAD' },
-        { id: 6, name: 'IR8 & 1R14 Rice', image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.indiamart.com%2Fproddetail%2Fwhite-ir8-raw-rice-12366034362.html&psig=AOvVaw26pz2cZqa2MPBE5z_T_gvQ&ust=1704612164226000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCICeuKydyIMDFQAAAAAdAAAAABAD' },
-        { id: 7, name: 'White Rice', image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Fphotos%2Fwhite-rice&psig=AOvVaw3QP_B-YsDbeX5KkxREQNkq&ust=1704612203896000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCJDa-cKdyIMDFQAAAAAdAAAAABAD' },
+        { id: 1, name: '1121 Indian Basmati Rice', image: 'https://lsmedia.linker-cdn.net/271294/2020/4957810.jpeg?width=600&height=570' },
+        { id: 2, name: '1509 Indian Basmati Rice', image: 'https://5.imimg.com/data5/SELLER/Default/2023/8/338694559/CY/PA/LO/97736314/1509-raw-basmati-rice.jpg' },
+        { id: 3, name: 'Pusa Indian Basmati Rice', image: 'https://5.imimg.com/data5/SELLER/Default/2023/8/335867754/BJ/RW/YW/104017866/commonly-cultivated-indian-originated-sun-dried-long-grain-pusa-basmati-rice-1kg-719.jpg' },
+        { id: 4, name: 'Sugendha Indian Basmati Rice', image: 'https://nationalgauravaward.org/wp-content/uploads/2020/12/sugandha-raw-white-basmati-rice-1549515644-4700532.jpeg' },
+        { id: 5, name: 'Permal Rice', image: 'https://images.jdmagicbox.com/quickquotes/images_main/fortune-rice-and-rice-products-12-03-2021-006-222969691-9syym.jpg' },
+        { id: 6, name: 'IR8 & 1R14 Rice', image: 'https://5.imimg.com/data5/SELLER/Default/2021/1/IZ/CB/NE/40594770/ir8-parboiled-rice-500x500.jpg' },
+        { id: 7, name: 'White Rice', image: 'https://5.imimg.com/data5/JC/SZ/YI/SELLER-92614650/long-grain-white-rice.jpg' },
       ],
     },
     {
         category: 'Oilseed Meals',
         products: [
-          { id: 8, name: 'Soybean Meal', image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3ASoybean_Oil%2C_Meal_and_Beans_%252810059732523%2529.jpg&psig=AOvVaw26BVtxyCOYFuw_eNBIZXXX&ust=1704612275891000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCMjj5eadyIMDFQAAAAAdAAAAABAD' },
-          { id: 9, name: 'Cottonseed Meal', image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fbakerpedia.com%2Fingredients%2Fcottonseed-oil%2F&psig=AOvVaw1RCANBTZzj5CWZF0_GFhAK&ust=1704612328137000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCJiajv-dyIMDFQAAAAAdAAAAABAD' },
-          { id: 10, name: 'Mustard/Canola Meal', image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.starhealth.in%2Fblog%2Fmustard-oil-benefits&psig=AOvVaw3GtALppTucfMBSofK2rnQi&ust=1704612378820000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCLCy8ZKeyIMDFQAAAAAdAAAAABAQ' },
+          { id: 8, name: 'Soybean Meal', image: 'https://surajcorporate.in/images/entries/full-size/Soyabean-meal.jpg' },
+          { id: 9, name: 'Cottonseed Meal', image: 'https://5.imimg.com/data5/SELLER/Default/2023/8/330953806/HQ/SY/YQ/76298142/cottonseed-meal.jpg' },
+          { id: 10, name: 'Mustard/Canola Meal', image: 'https://5.imimg.com/data5/RP/GM/MY-715258/mustard-meal-500x500.jpg' },
           
         ],
       },
     {
       category: 'Spices',
       products: [
-        { id: 11, name: 'Turmeric', image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.viralspices.com%2Fblog%2Ffrom-ancient-remedy-to-global-sensation-indias-organic-turmeric-powder-and-its-benefits&psig=AOvVaw0Eud8hq2FWKUGA9Zrh9cRY&ust=1704612446367000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCICZ6bWeyIMDFQAAAAAdAAAAABAD' },
-        { id: 12, name: 'Black Pepper', image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Ftheconversation.com%2Fblack-pepper-healthy-or-not-179815&psig=AOvVaw1sguhlkwNhdPlwWriX5YSE&ust=1704612502761000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCPCY-9CeyIMDFQAAAAAdAAAAABAD' },
-        { id: 13, name: 'Cumin', image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fsearch%2Fcumin&psig=AOvVaw2-wqc1U1ndVffuA1BWEoGn&ust=1704612536506000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCJij5d6eyIMDFQAAAAAdAAAAABAD' },
-        { id: 14, name: 'Red Chilli', image: 'https://example.com/red-chilli.jpg' },
-        { id: 15, name: 'Rock Salt', image: 'https://example.com/rock-salt.jpg' },
-        { id: 16, name: 'Coconut Powder', image: 'https://example.com/coconut-powder.jpg' },
-        { id: 17, name: 'Cinnamon', image: 'https://example.com/cinnamon.jpg' },
-        { id: 18, name: 'Cardamom', image: 'https://example.com/cardamom.jpg' },
-        { id: 19, name: 'Dry Ginger', image: 'https://example.com/dry-ginger.jpg' },
+        { id: 11, name: 'Turmeric', image: 'https://5.imimg.com/data5/SELLER/Default/2023/7/322144231/HY/VX/KT/42218902/organic-turmeric-powder.jpeg' },
+        { id: 12, name: 'Black Pepper', image: 'https://www.pepperhub.in/wp-content/uploads/2020/10/black-pepper-500x500-1.jpg' },
+        { id: 13, name: 'Cumin', image: 'https://5.imimg.com/data5/DC/AY/XD/SELLER-5826574/cumin-seeds-500x500.jpg' },
+        { id: 14, name: 'Red Chilli', image: 'https://shorturl.at/aqJXZ' },
+        { id: 15, name: 'Rock Salt', image: 'https://shorturl.at/kxAOU' },
+        { id: 16, name: 'Coconut Powder', image: 'https://5.imimg.com/data5/SELLER/Default/2023/4/297162416/XH/QI/ST/186852758/dry-coconut-powder.png' },
+        { id: 17, name: 'Cinnamon', image: 'https://plantura.garden/uk/wp-content/uploads/sites/2/2021/10/cinnamon-in-the-garden.jpg' },
+        { id: 18, name: 'Cardamom', image: 'https://m.media-amazon.com/images/I/61P2X5yWxeL._AC_UF1000,1000_QL80_.jpg' },
+        { id: 19, name: 'Dry Ginger', image: 'https://seed2plant.in/cdn/shop/products/100_05b06d48-3ddb-461d-a1cf-58bb9757abec.png?v=1641469426&width=1500' },
         
       ],
     },{
         category: 'Nuts',
         products: [
-          { id: 20, name: 'Mamra Almond', image: 'https://example.com/mamra-almond.jpg' },
-          { id: 21, name: 'Mediterranean Almond', image: 'https://example.com/mediterranean-almond.jpg' },
-          { id: 22, name: 'Pistachio', image: 'https://example.com/pistachio.jpg' },
-          { id: 23, name: 'Pistachian Insell', image: 'https://example.com/pistachian-insell.jpg' },
-          { id: 24, name: 'Pistachio Leramel', image: 'https://example.com/pistachio-leramel.jpg' },
-          { id: 25, name: 'Saffron', image: 'https://example.com/saffron.jpg' },
-          { id: 26, name: 'Dates', image: 'https://example.com/dates.jpg' },
-          { id: 27, name: 'Apricots', image: 'https://example.com/apricots.jpg' },
-          { id: 28, name: 'Raisin', image: 'https://example.com/raisin.jpg' },
-          { id: 29, name: 'Fox Nut', image: 'https://example.com/fox-nut.jpg' },
-          { id: 30, name: 'Figs', image: 'https://example.com/figs.jpg' },
-          { id: 31, name: 'Prunes', image: 'https://example.com/prunes.jpg' },
-          { id: 32, name: 'Pinenuts', image: 'https://example.com/pinenuts.jpg' },
-          { id: 33, name: 'Cashew Nut', image: 'https://example.com/cashew-nut.jpg' },
+          { id: 20, name: 'Mamra Almond', image: 'https://plantura.garden/uk/wp-content/uploads/sites/2/2021/10/cinnamon-in-the-garden.jpg' },
+          { id: 21, name: 'Mediterranean Almond', image: 'https://facts.net/wp-content/uploads/2023/07/14-facts-about-almonds-1689330963.jpg' },
+          { id: 22, name: 'Pistachio', image: 'https://5.imimg.com/data5/SELLER/Default/2021/5/SB/YW/AS/88400203/california-pistachios-500x500.jpg' },
+          { id: 23, name: 'Pistachian Insell', image: 'https://5.imimg.com/data5/SELLER/Default/2021/5/SB/YW/AS/88400203/california-pistachios-500x500.jpg' },
+          { id: 24, name: 'Pistachio Leramel', image: 'https://m.media-amazon.com/images/I/51rpKvjc0WL.jpg' },
+          { id: 25, name: 'Saffron', image: 'https://5.imimg.com/data5/SELLER/Default/2021/5/SB/YW/AS/88400203/california-pistachios-500x500.jpg' },
+          { id: 26, name: 'Dates', image: 'https://m.media-amazon.com/images/I/413JSqa2SFL._AC_UF1000,1000_QL80_.jpg' },
+          { id: 27, name: 'Apricots', image: 'https://shorturl.at/nou68' },
+          { id: 28, name: 'Raisin', image: 'https://5.imimg.com/data5/ON/AW/JJ/SELLER-78441475/sun-dried-raisin.jpg' },
+          { id: 29, name: 'Fox Nut', image: 'https://5.imimg.com/data5/SELLER/Default/2023/6/321262334/FQ/ZD/KC/84813594/fox-nuts-makhana-.jpg' },
+          { id: 30, name: 'Figs', image: 'https://shorturl.at/ikCV8' },
+          { id: 31, name: 'Prunes', image: 'https://i0.wp.com/www.nutshouse.in/wp-content/uploads/2021/04/dried-prunes-with-pits-jumbo-1S-1839.jpg?fit=900%2C900&ssl=1' },
+          { id: 32, name: 'Pinenuts', image: 'https://shorturl.at/nxCDX' },
+          { id: 33, name: 'Cashew Nut', image: 'https://5.imimg.com/data5/SELLER/Default/2022/8/KE/YZ/EG/22423502/cashew-nuts.jpg' },
          
         ],
       },
       {
         category: 'Tea',
         products: [
-          { id: 34, name: 'Indian Tea (Darjeeling)', image: 'https://example.com/indian-tea-darjeeling.jpg' },
-          { id: 35, name: 'Ginseng Nahunal Tea', image: 'https://example.com/ginseng-nahunal-tea.jpg' },
-          { id: 36, name: 'Green Tea', image: 'https://example.com/green-tea.jpg' },
-          { id: 37, name: 'Assary Orthodox Tea', image: 'https://example.com/assary-orthodox-tea.jpg' },
-          { id: 38, name: 'Cylon Orthodox Tea', image: 'https://example.com/cylon-orthodox-tea.jpg' },
+          { id: 34, name: 'Indian Tea (Darjeeling)', image: 'https://www.quickpantry.in/cdn/shop/products/LooseTeaOption2_500x500.jpg?v=1597180354' },
+          { id: 36, name: 'Green Tea', image: 'https://i0.wp.com/www.gopaldharaindia.com/wp-content/uploads/2011/04/Lemon-Green-Tea-cup-liquor.jpg' },
+          { id: 37, name: 'Assary Orthodox Tea', image: 'https://5.imimg.com/data5/SELLER/Default/2020/9/WW/HE/TE/111378024/orthodox-assam-tea-500x500.jpg' },
           
         ],
       },
       {
         category: 'Legumes',
         products: [
-          { id: 39, name: 'Green Pea', image: 'https://example.com/green-pea.jpg' },
-          { id: 40, name: 'Frozen Pea', image: 'https://example.com/frozen-pea.jpg' },
-          { id: 41, name: 'Dry Pea', image: 'https://example.com/dry-pea.jpg' },
-          { id: 42, name: 'Ground Nuts', image: 'https://example.com/ground-nuts.jpg' },
+          { id: 39, name: 'Green Pea', image: 'https://nurserynisarga.in/wp-content/uploads/2021/10/textures-1938301.jpg' },
+          { id: 40, name: 'Frozen Pea', image: 'https://5.imimg.com/data5/ZP/MT/DU/SELLER-70813520/frozen-broccoli.jpg' },
+          { id: 41, name: 'Dry Pea', image: 'https://organicshandy.com/wp-content/uploads/2018/10/Peas-White.jpg' },
+          { id: 42, name: 'Ground Nuts', image: 'https://img1.exportersindia.com/product_images/bc-full/2021/9/3742883/ground-nut-without-shell-1632936231-6016610.jpeg' },
           
         ],
       },
       {
         category: 'Processed Foods',
         products: [
-          { id: 43, name: 'Tomato Paste', image: 'https://example.com/tomato-paste.jpg' },
-          { id: 44, name: 'Potato Starch', image: 'https://example.com/potato-starch.jpg' },
+          { id: 43, name: 'Tomato Paste', image: 'https://www.telegraph.co.uk/content/dam/recipes/2020/07/10/TELEMMGLPICT000234109843.jpeg' },
+          { id: 44, name: 'Potato Starch', image: 'https://5.imimg.com/data5/SELLER/Default/2023/4/299639834/LR/FF/VJ/8079300/dehydrated-potato-starch-powder.jpg' },
           
         ],
       },
       {
         category: 'Snacks',
         products: [
-          { id: 45, name: 'Raw Potato Chips/Wafers', image: 'https://example.com/raw-potato-chips.jpg' },
+          { id: 45, name: 'Raw Potato Chips/Wafers', image: 'https://m.media-amazon.com/images/I/51WrYM5Q9UL.jpg' },
           
         ],
       },
       {
         category: 'Fruits',
         products: [
-          { id: 46, name: 'Mango Fresh', image: 'https://example.com/mango-fresh.jpg' },
-          { id: 47, name: 'Mango Powder', image: 'https://example.com/mango-powder.jpg' },
-          { id: 48, name: 'Amla Dry', image: 'https://example.com/amla-dry.jpg' },
+          { id: 46, name: 'Mango Fresh', image: 'https://4.imimg.com/data4/AT/RM/MY-29356566/indian-mangoes.jpg' },
+          { id: 47, name: 'Mango Powder', image: 'https://5.imimg.com/data5/RT/XL/EO/SELLER-3147536/dry-mango-powder-500x500.jpg' },
+          { id: 48, name: 'Amla Dry', image: 'https://www.neelayurvedics.com/wp-content/uploads/2019/10/Neel-Ayurvedics-Amla.jpg' },
           
         ],
       },
       {
         category: 'Seeds',
         products: [
-          { id: 49, name: 'Sesame Seeds', image: 'https://example.com/sesame-seeds.jpg' },
+          { id: 49, name: 'Sesame Seeds', image: 'https://www.neelayurvedics.com/wp-content/uploads/2019/10/Neel-Ayurvedics-Amla.jpg' },
           
         ],
       },

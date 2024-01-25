@@ -42,9 +42,12 @@ const Footer = () => {
         {/* Right Section - Copyright, Contact Info, and Social Handles */}
         <div className="w-full md:w-1/2 lg:w-1/3 bg-white dark:bg-green-500 p-8 flex items-center justify-center">
           <div className="text-white">
-            <p className="text-center text-xl font-semibold mb-4">Email: info@example.com</p>
-            <p className="text-center text-xl font-semibold mb-4">Contact: +01 234 567 89</p>
-            <p className="text-center text-2xl font-semibold mb-4">© 2024 Your Company</p>
+          <p className="text-center text-xl font-semibold mb-4">Adress: Corp. Office: Level-1, Building No. 10, Tower A DLF Cyber Hub, Phase-II, Gurgaon-122022
+</p>
+            <p className="text-center text-xl font-semibold mb-4">Factory: Gyanwadi, Meethi Rohar, Industrial Area NH-5, Gandhidham, Kutch (Gujrat)</p>
+            <p className="text-center text-xl font-semibold mb-4">Email: info@indoberge.com</p>
+            <p className="text-center text-xl font-semibold mb-4">Contact: +91-9711 9220 95</p>
+            <p className="text-center text-2xl font-semibold mb-4">© 2024 INDOBERGE AGRO PVT. LIMITED</p>
             
             {/* Social handles with react-icons */}
             <div className="flex justify-center space-x-4 mt-4">

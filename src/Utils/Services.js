@@ -2,8 +2,8 @@ import React from 'react';
 
 const Services = () => {
   const Product = ({ name, image }) => (
-    <div className="m-4 p-4 border border-gray-300 rounded-md shadow-md transition-transform transform hover:scale-105">
-      <img src={image} alt={name} className="w-40 h-40 object-cover mb-4 rounded-md" />
+    <div className="m-4 p-4 border border-gray-300 rounded-md shadow-md transition-transform transform hover:scale-105 text-center">
+      <img src={image} alt={name} className="w-40 h-40 object-cover mb-4 rounded-md mx-auto" />
       <div className="text-center">
         <h3 className="text-xl font-bold mb-2">{name}</h3>
       </div>
@@ -14,9 +14,9 @@ const Services = () => {
     {
       category: 'Services',
       subcategories: [
-        { id: 32, name: 'Consultancy', image: 'https://example.com/consultancy.jpg' },
-        { id: 33, name: 'Farm Manipulation', image: 'https://example.com/farm-manipulation.jpg' },
-        { id: 34, name: 'Agriculture', image: 'https://example.com/agriculture.jpg' },
+        { id: 32, name: 'Consultancy', image: 'https://5.imimg.com/data5/ANDROID/Default/2022/11/VM/RT/UP/33887920/product-jpeg-500x500.jpg' },
+        { id: 33, name: 'Farm Manipulation', image: 'https://cache.careers360.mobi/media/article_images/2022/6/7/Agriculture-courses-after-10th.webp' },
+        { id: 34, name: 'Agriculture', image: 'https://lvivity.com/wp-content/uploads/2020/04/iot-in-agriculture.jpg' },
         
       ],
     },

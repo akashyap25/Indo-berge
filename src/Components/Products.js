@@ -1,10 +1,45 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ContentLoader from 'react-content-loader';
 import foodimg from "../assets/food&beverage.jpg";
 import agri from "../assets/agri.jpg";
 import equipment from "../assets/equipment.jpg";
 import consult from "../assets/consult.jpg";
 import oil from "../assets/oil.jpg";
+
+const MyLoader = React.memo(() => (
+  <ContentLoader
+    speed={2}
+    width={300}
+    height={460}
+    viewBox="0 0 300 460"
+    backgroundColor="#f3f3f3"
+    foregroundColor="#ecebeb"
+  >
+    <rect x="0" y="0" rx="10" ry="10" width="100%" height="300" />
+    <rect x="0" y="320" rx="3" ry="3" width="70%" height="20" />
+    <rect x="0" y="350" rx="3" ry="3" width="50%" height="20" />
+    <rect x="0" y="380" rx="3" ry="3" width="60%" height="20" />
+  </ContentLoader>
+));
+
+const Product = React.memo(({ product }) => (
+  <Link to={product.link}>
+    <div
+      className="relative overflow-hidden shadow-md rounded-md hover:shadow-lg transform hover:scale-105 transition duration-300 p-4 cursor-pointer min-w-full"
+    >
+      <img
+        src={product.image}
+        alt={product.name}
+        className="w-full h-72 object-cover mb-4 rounded-md transition duration-300 transform hover:scale-105"
+        loading="lazy"
+      />
+      <div className="absolute inset-0 flex items-center justify-center text-white hover:text-orange-500 transition duration-300 text-3xl font-semibold bg-gradient-to-t from-black to-transparent p-2">
+        {product.name}
+      </div>
+    </div>
+  </Link>
+));
 
 const Products = () => {
   const productData = [
@@ -23,20 +58,7 @@ const Products = () => {
       </h1>
       <div className="flex flex-wrap justify-center gap-6 mt-4 mx-auto">
         {productData.map((product) => (
-          <Link key={product.id} to={product.link}>
-            <div
-              className="relative overflow-hidden bg-white shadow-md rounded-md hover:shadow-lg transform hover:scale-105 transition duration-300 p-4 cursor-pointer"
-            >
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-72 object-cover mb-4 rounded-md transition duration-300 transform hover:scale-105"
-              />
-              <div className="absolute inset-0 flex items-center justify-center text-white hover:text-orange-500 transition duration-300 text-3xl font-semibold bg-gradient-to-t from-black to-transparent p-2">
-                {product.name}
-              </div>
-            </div>
-          </Link>
+          <Product key={product.id} product={product} />
         ))}
       </div>
     </div>

@@ -8,6 +8,7 @@ const Navbar = () => {
   const [scrolling, setScrolling] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [nav, setNav] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
 
   const handleScroll = () => {
     setScrolling(window.scrollY > 30);
@@ -19,6 +20,14 @@ const Navbar = () => {
 
   const handleNav = () => {
     setNav(!nav);
+  };
+
+  const handleDropdownToggle = () => {
+    setShowDropdown(!showDropdown);
+  };
+
+  const closeDropdown = () => {
+    setShowDropdown(false);
   };
 
   useEffect(() => {
@@ -39,6 +48,14 @@ const Navbar = () => {
     { id: 4, text: 'Contact', path: 'contact' },
   ];
 
+  const productData = [
+    { id: 1, name: 'Food and Beverages',  link: '/foodProducts' },
+    { id: 2, name: 'Agriculture',  link: '/agriProducts' },
+    { id: 3, name: 'Engineering',  link: '/engineeringProducts' },
+    { id: 4, name: 'Services',  link: '/servicesProducts' },
+    { id: 5, name: 'Raw organic material and cooking oil',  link: '/rawProducts' },
+  ];
+
   return (
     <div
       className={`p-4 bg-gradient-to-r from-green-500 to-green-700 shadow-md fixed w-full top-0 z-50 transition-all duration-300 ${
@@ -52,22 +69,45 @@ const Navbar = () => {
           alt="Logo"
           className={`h-28 rounded-full hover:scale-110 transition duration-300 cursor-pointer ${
             scrolling ? 'hidden' : ''
+          } ${
+            nav ? 'hidden' : ''
           }`}
         />
 
         {/* Desktop Navigation */}
         <ul className={`hidden md:flex ml-auto gap-2 md:gap-10 space-x-4 text-xl font-semibold ${
-            scrolling ? 'mx-auto' : ''
-          }`}>
-          {navItems.map(item => (
+          scrolling ? 'mx-auto' : ''
+        }`}>
+          {navItems.map((item) => (
             <li
               key={item.id}
-              className='p-4 rounded-xl m-2 text-white cursor-pointer duration-300 hover:text-orange-500'
+              className='relative group'
+              onMouseEnter={item.text === 'Products' ? handleDropdownToggle : undefined}
+              onMouseLeave={item.text === 'Products' ? closeDropdown : undefined}
             >
               {item.path === '/' ? (
-                <Link to={item.path}>{item.text}</Link>
+                <Link to={item.path} className='p-4 rounded-xl m-2 text-white cursor-pointer duration-300 hover:text-orange-500'>
+                  {item.text}
+                </Link>
               ) : (
-                <ScrollLink to={item.path}>{item.text}</ScrollLink>
+                <ScrollLink to={item.path} className='p-4 rounded-xl m-2 text-white cursor-pointer duration-300 hover:text-orange-500'>
+                  {item.text}
+                </ScrollLink>
+              )}
+
+              {/* Dropdown menu for "Products" */}
+              {item.text === 'Products' && showDropdown && (
+                <div className="absolute top-full left-0 mt-2 bg-green-500 p-2 rounded-md shadow-md w-48">
+                  <ul>
+                    {productData.map((product) => (
+                      <li key={product.id} className='py-2'>
+                        <Link to={product.link} className='text-white hover:text-orange-500 font-normal'>
+                          {product.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               )}
             </li>
           ))}
@@ -91,18 +131,39 @@ const Navbar = () => {
         <img src={logo} alt="Logo" className="h-16 rounded-full hover:scale-110 transition duration-300 cursor-pointer" />
 
         {/* Mobile Navigation Items */}
-        {navItems.map(item => (
+        {navItems.map((item) => (
+          item.text !== 'Products' && (
           <li
             key={item.id}
             className='p-4 border-b rounded-xl text-xl font-normal  duration-300 text-white hover:text-orange-500 cursor-pointer border-gray-600'
           >
-            {item.path === '/' ? (
+            {item.path === '/'  ? (
               <Link to={item.path}>{item.text}</Link>
             ) : (
               <ScrollLink to={item.path}>{item.text}</ScrollLink>
             )}
+            
           </li>
+          )
         ))}
+
+        {/* Dropdown menu for "Products" in mobile */}
+        <li className='relative group p-4 border-b rounded-xl text-xl font-normal duration-300 text-white hover:text-orange-500 cursor-pointer border-gray-600'>
+          <span onClick={handleDropdownToggle}>Products</span>
+          {showDropdown && (
+            <div className="absolute top-full left-0 mt-2 bg-green-500 p-2 rounded-md shadow-md w-48">
+              <ul>
+                {productData.map((product) => (
+                  <li key={product.id} className='py-2'>
+                    <Link to={product.link} className='text-white hover:text-orange-500 font-normal'>
+                      {product.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </li>
       </ul>
     </div>
   );

@@ -2,13 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { image1, image2, image3 } from '../assets';
 import left from "../assets/icon-angle-left.svg"
 import right from "../assets/icon-angle-right.svg";
-import Products from './products';
 
 const imageData = [
   image1,
   image2,
   image3,
-  // Add more images as needed
 ];
 
 function Home() {
@@ -16,12 +14,10 @@ function Home() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      // Move to the next slide
       setCurrentSlide((prevSlide) => (prevSlide + 1) % imageData.length);
-    }, 3000); // Change image every 3 seconds
+    }, 3000);
 
     return () => {
-      // Clear the timer when the component unmounts or the slide changes
       clearTimeout(timer);
     };
   }, [currentSlide]);
@@ -38,20 +34,20 @@ function Home() {
     );
   };
 
-  // Calculate the height based on the screen width while maintaining aspect ratio
-  const screenHeight = window.innerHeight;
-  const screenWidth = window.innerWidth;
-  const calculatedHeight = (screenWidth / 16) * 9; // Assuming a 16:9 aspect ratio
+  // Use dynamic styles to adjust image height on mobile
+  const styles = {
+    height: window.innerWidth <= 768 ? '90vh' : 'calc(100vh - 5rem)',
+  };
 
   return (
     <>
-      <div   className="relative w-full z-0 mt-24" data-carousel="slide">
+      <div className="relative w-full z-0 mt-24" data-carousel="slide">
         {/* Carousel wrapper */}
-        <div className="relative w-full h-[calc(100vh-5rem)] overflow-hidden rounded-lg md:h-[calc(100vh-5rem)]">
+        <div className="relative w-full h-full overflow-hidden rounded-lg md:h-full" style={styles}>
           {imageData.map((imageUrl, index) => (
             <div
               key={index}
-              className={`absolute block w-full h-${calculatedHeight} -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ${
+              className={`absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ${
                 index === currentSlide ? 'opacity-100' : 'opacity-0'
               } transition-opacity duration-700 ease-in-out`}
               data-carousel-item
