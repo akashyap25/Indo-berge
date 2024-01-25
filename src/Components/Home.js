@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { image1, image2, image3 } from '../assets';
 import left from '../assets/icon-angle-left.svg';
 import right from '../assets/icon-angle-right.svg';
 
-const imageData = [image1, image2, image3];
+const imageUrls = [
+  'https://i.postimg.cc/JnVf5kqR/1.jpg',
+  'https://i.postimg.cc/3JRcp1Tg/2.jpg',
+  'https://i.postimg.cc/DwQLzVM5/3.jpg',
+];
 
 function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % imageData.length);
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % imageUrls.length);
     }, 3000);
 
     return () => clearTimeout(timer);
@@ -18,9 +21,11 @@ function Home() {
 
   const goToSlide = (index) => setCurrentSlide(index);
 
-  const goToPreviousSlide = () => setCurrentSlide((prevSlide) => (prevSlide === 0 ? imageData.length - 1 : prevSlide - 1));
+  const goToPreviousSlide = () =>
+    setCurrentSlide((prevSlide) => (prevSlide === 0 ? imageUrls.length - 1 : prevSlide - 1));
 
-  const goToNextSlide = () => setCurrentSlide((prevSlide) => (prevSlide === imageData.length - 1 ? 0 : prevSlide + 1));
+  const goToNextSlide = () =>
+    setCurrentSlide((prevSlide) => (prevSlide === imageUrls.length - 1 ? 0 : prevSlide + 1));
 
   const styles = {
     height: window.innerWidth <= 768 ? '90vh' : 'calc(100vh - 5rem)',
@@ -29,7 +34,7 @@ function Home() {
   return (
     <div className="relative w-full z-0 mt-24" data-carousel="slide">
       <div className="relative w-full h-full overflow-hidden rounded-lg md:h-full" style={styles}>
-        {imageData.map((imageUrl, index) => (
+        {imageUrls.map((imageUrl, index) => (
           <div
             key={index}
             className={`absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ${
@@ -42,7 +47,7 @@ function Home() {
         ))}
       </div>
       <div className="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-        {imageData.map((_, index) => (
+        {imageUrls.map((_, index) => (
           <button
             key={index}
             type="button"

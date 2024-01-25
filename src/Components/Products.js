@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import foodimg from '../assets/food&beverage.jpg';
-import agri from '../assets/agri.jpg';
-import equipment from '../assets/equipment.jpg';
-import consult from '../assets/consult.jpg';
-import oil from '../assets/oil.jpg';
+
 
 const Shimmer = () => (
   <div className="animate-pulse bg-gray-300 h-72 w-full mb-4 rounded-md flex flex-wrap"></div>
@@ -44,11 +40,11 @@ const Product = React.memo(({ product }) => {
 
 const Products = () => {
   const productData = [
-    { id: 1, name: 'Food and Beverages', image: foodimg, link: '/foodProducts' },
-    { id: 2, name: 'Agriculture', image: agri, link: '/agriProducts' },
-    { id: 3, name: 'Engineering', image: equipment, link: '/engineeringProducts' },
-    { id: 4, name: 'Services', image: consult, link: '/servicesProducts' },
-    { id: 5, name: 'Raw organic material and cooking oil', image: oil, link: '/rawProducts' },
+    { id: 1, name: 'Food and Beverages', image: 'https://i.postimg.cc/yYgDDqkc/food-beverage.jpg', link: '/foodProducts' },
+    { id: 2, name: 'Agriculture', image: 'https://i.postimg.cc/c4HJPpQP/agri.jpg', link: '/agriProducts' },
+    { id: 3, name: 'Engineering', image: 'https://i.postimg.cc/rsRPryBv/equipment.jpg', link: '/engineeringProducts' },
+    { id: 4, name: 'Services', image: 'https://i.postimg.cc/Hkt8gwrh/consult.jpg', link: '/servicesProducts' },
+    { id: 5, name: 'Raw organic material and cooking oil', image: 'https://i.postimg.cc/RC8F5PXF/oil.jpg', link: '/rawProducts' },
   ];
 
   return (
