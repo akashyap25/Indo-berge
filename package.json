@@ -1,8 +1,7 @@
 {
-  "name": "restaurant",
+  "name": "IndoBerge",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
   "source": "public/index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
@@ -30,14 +29,5 @@
     "postcss": "^8.4.31",
     "process": "^0.11.10",
     "tailwindcss": "^3.3.5"
-  },
-  "proxy": {
-    "/api": {
-      "target": "https://www.swiggy.com",
-      "changeOrigin": true,
-      "headers": {
-        "Access-Control-Allow-Origin": "*"
-      }
-    }
   }
 }
